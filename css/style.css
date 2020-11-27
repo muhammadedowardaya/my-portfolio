@@ -10,7 +10,7 @@ body {
 	background-attachment: fixed;
 	background-position: center center;
 	background-position-x: -100px;
-	height: 100vh;
+	height: 100%;
 }
 
 nav.navbar a {
@@ -152,16 +152,52 @@ hr {
 	height: auto;
 }
 
-@media (max-width: 411px) {
+/* ----------   Mobile S */
+@media (min-width: 320px) {
 	.container1 {
-		background-size: 1200px;
-		background-position-x: -140px;
+		background-size: 1400px;
+		background-position-x: 40%;
+		background-position-y: 60%;
 	}
 	section.about {
 		background-attachment: fixed;
 		background-size: cover;
 		background-blend-mode: multiply;
 		opacity: 0.9;
+		height: 580px;
+	}
+	section.about p {
+		text-indent: 50px;
+		padding-top: 5px;
+		text-align: justify;
+		padding-right: 5px;
+		font-size: 15px;
+		text-shadow: 1px 0 black;
+	}
+	section.about p.p1 {
+		padding-top: 35px;
+	}
+	section.portfolio {
+		background-size: cover;
+		background-attachment: fixed;
+		background-position-x: left;
+	}
+	section.portfolio h4 {
+		font-size: 18px;
+	}
+}
+/* -------------  Mobile M */
+@media (min-width: 375px) {
+	.container1 {
+		background-size: 1300px;
+		background-position-x: 23%;
+	}
+	section.about {
+		background-attachment: fixed;
+		background-size: cover;
+		background-blend-mode: multiply;
+		opacity: 0.9;
+		height: 580px;
 	}
 	section.about p {
 		text-indent: 50px;
@@ -184,9 +220,123 @@ hr {
 	}
 }
 
-@media (min-width: 780px) {
-	section.about img {
-		padding: 0;
-		margin: 0;
+/* -------------  Mobile L */
+@media (min-width: 425px) {
+	.container1 {
+		background-size: 1300px;
+		background-position-x: 19%;
+	}
+	section.about {
+		background-attachment: fixed;
+		background-size: cover;
+		background-blend-mode: multiply;
+		opacity: 0.9;
+		height: 580px;
+	}
+	section.about p {
+		text-indent: 50px;
+		padding-top: 5px;
+		text-align: justify;
+		padding-right: 5px;
+		font-size: 15px;
+		text-shadow: 1px 0 black;
+	}
+	section.about p.p1 {
+		padding-top: 35px;
+	}
+	section.portfolio {
+		background-size: cover;
+		background-attachment: fixed;
+		background-position-x: left;
+	}
+	section.portfolio h4 {
+		font-size: 18px;
+	}
+}
+
+/* --------------  Tablet */
+@media (min-width: 768px) {
+	.container1 {
+		background-size: 1400px;
+		background-position-x: 1%;
+	}
+	section.about {
+		background-attachment: fixed;
+		background-size: 450px;
+		background-blend-mode: multiply;
+		opacity: 0.9;
+		height: 500px;
+		display: flex;
+		justify-content: center;
+	}
+	section.about p {
+		width: 450px;
+		text-indent: 50px;
+		padding-top: 5px;
+		text-align: justify;
+		padding-right: 5px;
+		font-size: 15px;
+		text-shadow: 1px 0 black;
+	}
+	section.about p.p1 {
+		padding-top: 35px;
+	}
+	section.about p.p2 {
+		margin-left: 120px;
+	}
+	section.about ul li {
+		margin-left: 107px;
+	}
+	section.portfolio {
+		background-size: cover;
+		background-attachment: fixed;
+		background-position-x: left;
+	}
+	section.portfolio h4 {
+		font-size: 18px;
+	}
+}
+
+/* --------------  Laptop */
+@media (min-width: 1024px) {
+	.container1 {
+		background-size: 1750px;
+		background-position-x: 1%;
+	}
+	section.about {
+		background-attachment: fixed;
+		background-size: 450px;
+		background-blend-mode: multiply;
+		opacity: 0.9;
+		height: 540px;
+		display: flex;
+		justify-content: center;
+	}
+	section.about p {
+		margin-left: 300px;
+		width: 450px;
+		text-indent: 50px;
+		padding-top: 5px;
+		text-align: justify;
+		padding-right: 5px;
+		font-size: 17px;
+		text-shadow: 1px 0 black;
+	}
+	section.about p.p1 {
+		padding-top: 35px;
+	}
+	section.about p.p2 {
+		margin-left: 460px;
+	}
+	section.about ul li {
+		margin-left: 450px;
+	}
+	section.portfolio {
+		background-size: cover;
+		background-attachment: fixed;
+		background-position-x: left;
+	}
+	section.portfolio h4 {
+		font-size: 18px;
 	}
 }
