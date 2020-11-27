@@ -152,7 +152,7 @@ hr {
 	height: auto;
 }
 
-@media (min-width: 400px) {
+@media (max-width: 411px) {
 	.container1 {
 		background-size: 1200px;
 		background-position-x: -140px;
