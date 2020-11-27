@@ -152,14 +152,14 @@ hr {
 	height: auto;
 }
 
-@media (max-width: 575.98px) {
+@media (min-width: 400px) {
 	.container1 {
 		background-size: 1200px;
-		background-position-x: -85px;
+		background-position-x: -140px;
 	}
 	section.about {
 		background-attachment: fixed;
-		background-size: 500px;
+		background-size: cover;
 		background-blend-mode: multiply;
 		opacity: 0.9;
 	}
@@ -178,6 +178,9 @@ hr {
 		background-size: cover;
 		background-attachment: fixed;
 		background-position-x: left;
+	}
+	section.portfolio h4 {
+		font-size: 18px;
 	}
 }
 
