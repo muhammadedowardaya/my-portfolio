@@ -23,5 +23,31 @@ $(window).scroll(function(){
 		});
 		
     }
-    console.log(wScroll);
+});
+
+$(document).ready(function(){
+
+	$('.page-scroll').on('click',function(e){
+
+		const tujuan = $(this).attr('href');
+		const elemenTjuan = $(tujuan);
+
+		$('html').animate({
+			scrollTop: elemenTjuan.offset().top -70
+		},1000,"easeInExpo");
+
+
+	});
+
+
+
+
+});
+const navbar = document.querySelector('.container .collapse');
+const tombol = document.querySelector('.navbar .container button');
+
+tombol.addEventListener('click', function () {
+
+	navbar.classList.toggle('show');
+	
 });
