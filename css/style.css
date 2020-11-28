@@ -7,7 +7,7 @@ body {
 .container1 {
 	background-image: url(../img/bg-head.jpg);
 	background-size: 1500px;
-	background-attachment: fixed;
+	-webkit-background-attachment: fixed;
 	background-position: center center;
 	background-position-x: -100px;
 	height: 100%;
@@ -160,7 +160,7 @@ hr {
 		background-position-y: 60%;
 	}
 	section.about {
-		background-attachment: fixed;
+		-webkit-background-attachment: fixed;
 		background-size: cover;
 		background-blend-mode: multiply;
 		opacity: 0.9;
@@ -193,7 +193,7 @@ hr {
 		background-position-x: 23%;
 	}
 	section.about {
-		background-attachment: fixed;
+		-webkit-background-attachment: fixed;
 		background-size: cover;
 		background-blend-mode: multiply;
 		opacity: 0.9;
@@ -227,7 +227,7 @@ hr {
 		background-position-x: 19%;
 	}
 	section.about {
-		background-attachment: fixed;
+		-webkit-background-attachment: fixed;
 		background-size: cover;
 		background-blend-mode: multiply;
 		opacity: 0.9;
