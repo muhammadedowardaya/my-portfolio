@@ -293,7 +293,7 @@ hr {
 		background-position-x: left;
 	}
 	section.portfolio h4 {
-		font-size: 18px;
+		font-size: 28px;
 	}
 }
 
@@ -337,6 +337,121 @@ hr {
 		background-position-x: left;
 	}
 	section.portfolio h4 {
-		font-size: 18px;
+		font-size: 30px;
+	}
+}
+
+/* --------------  Laptop L */
+@media (min-width: 1440px) {
+	.container1 {
+		background-size: 1750px;
+		background-position-x: 45%;
+	}
+	section.about {
+		background-attachment: fixed;
+		background-size: 450px;
+		background-blend-mode: multiply;
+		opacity: 0.9;
+		height: 540px;
+		display: flex;
+		justify-content: center;
+	}
+	section.about p {
+		margin-left: 300px;
+		width: 800px;
+		text-indent: 50px;
+		padding-top: 5px;
+		text-align: justify;
+		padding-right: 5px;
+		font-size: 17px;
+		text-shadow: 1px 0 black;
+	}
+	section.about p.p1 {
+		padding-top: 35px;
+	}
+	section.about p.p2 {
+		text-indent: 108px;
+		margin-left: 460px;
+	}
+	section.about ul li {
+		margin-left: 500px;
+	}
+	section.portfolio {
+		background-size: cover;
+		background-attachment: fixed;
+		background-position-x: left;
+	}
+	section.portfolio h4 {
+		font-size: 34px;
+	}
+}
+
+/* ---------------------  Desktop */
+
+@media (min-width: 2560px) {
+	nav.navbar a {
+		padding-right: 50px;
+		font-size: 50px;
+	}
+	nav.navbar ul li a {
+		padding-right: 50px !important;
+		font-size: 37px !important;
+	}
+	header {
+		height: 1000px;
+	}
+	header img {
+		width: 350px;
+		overflow: hidden;
+	}
+	header h1 {
+		font-size: 54px;
+	}
+	header p {
+		font-size: 32px;
+	}
+	.container1 {
+		background-size: 2950px;
+		background-position-x: 75%;
+	}
+	section.about {
+		background-attachment: scroll;
+		background-size: 800px;
+		background-blend-mode: multiply;
+		opacity: 0.9;
+		height: 900px;
+		display: flex;
+		justify-content: center;
+	}
+	section.about p {
+		width: 900px;
+		text-indent: 100px;
+		padding-top: 5px;
+		text-align: justify;
+		padding-right: 5px;
+		font-size: 34px;
+		text-shadow: 1px 0 black;
+	}
+	section.about p.p1 {
+		padding-top: 35px;
+	}
+	section.about p.p2 {
+		text-indent: 90px;
+		margin-left: 520px;
+	}
+	section.about ul li {
+		font-size: 34px;
+		margin-left: 500px;
+	}
+	section.portfolio {
+		background-size: cover;
+		background-attachment: fixed;
+		background-position-x: left;
+	}
+	section.portfolio h4 {
+		font-size: 50px;
+	}
+	section.portfolio .row .col-md-6 a {
+		width: 1000px !important;
 	}
 }
