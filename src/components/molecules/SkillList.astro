@@ -1,0 +1,39 @@
+---
+import SkillItem from './SkillItem.astro';
+
+export interface SkillItem {
+	title: string;
+	description: string;
+	iconUrl: string;
+}
+interface Props {
+	skills: SkillItem[];
+}
+
+const { skills } = Astro.props;
+---
+
+<div id="skills-list">
+	{
+		skills.map((skill) => (
+			<SkillItem
+				title={skill.title}
+				description={skill.description}
+				iconUrl={skill.iconUrl}
+			/>
+		))
+	}
+</div>
+
+<style>
+    #skills-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        @screen desktop {
+            padding-top:100px;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+</style>

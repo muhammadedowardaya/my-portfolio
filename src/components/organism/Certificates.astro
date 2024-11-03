@@ -1,0 +1,79 @@
+---
+import CertificateList, {
+	type Certificate,
+} from '../molecules/CertificateList.astro';
+
+interface Props {
+	certificates: Certificate[];
+}
+
+const { certificates } = Astro.props;
+---
+
+<section id="certificates">
+	<h2>Certificates</h2>
+	<p>Sertifikat yang Mendukung Kualifikasi dan Pengalaman Saya</p>
+	<CertificateList certificates={certificates} />
+</section>
+
+<style>
+	#certificates {
+		padding: 64px 20px;
+		background-color: var(--background);
+
+		@screen tablet {
+			padding: 80px;
+		}
+
+		@screen desktop {
+			padding: 148px 130px;
+		}
+
+		& > h2 {
+			text-align: center;
+			font-family: 'Concert One', sans-serif;
+			font-size: 24px;
+			margin-bottom: 20px;
+
+			@screen mobile {
+				font-size: 32px;
+			}
+		}
+
+		& > p {
+			font-size: 16px;
+			text-align: center;
+			width: 100%;
+			margin: 0 auto 40px auto;
+
+            @screen mobile {
+				font-size: 20px;
+			}
+
+			@screen tablet {
+				font-size: 24px;
+			}
+
+			@screen desktop {
+				width: 700px;
+				margin: 0 auto 148px auto;
+			}
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		#certificates {
+			padding: 148px 130px;
+
+			& > h2 {
+				font-size: 32px;
+			}
+
+			& > p {
+				font-size: 24px;
+				width: 700px;
+				margin: 0 auto 148px auto;
+			}
+		}
+	}
+</style>
