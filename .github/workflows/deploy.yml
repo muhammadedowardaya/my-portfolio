@@ -1,30 +1,35 @@
-name: Deploy Astro to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Branch yang akan digunakan untuk deploy (sesuaikan dengan branch Anda)
+      - main  # Ganti jika Anda menggunakan branch utama selain "main"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18'  # Sesuaikan dengan versi Node.js yang Anda gunakan
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project
+      - name: Build project
         run: npm run build
+
+      - name: Create .nojekyll file
+        # Membuat file .nojekyll di folder build
+        run: echo > ./docs/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs # Sesuaikan dengan output build proyek Astro Anda
+          publish_dir: ./docs  # Sesuaikan dengan folder output Astro Anda
