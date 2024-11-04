@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Ganti jika Anda menggunakan branch utama selain "main"
+      - main # Ganti jika Anda menggunakan branch utama selain "main"
 
 jobs:
   build-and-deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Sesuaikan dengan versi Node.js yang Anda gunakan
+          node-version: '18' # Sesuaikan dengan versi Node.js yang Anda gunakan
 
       - name: Install dependencies
         run: npm install
@@ -32,4 +32,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs  # Sesuaikan dengan folder output Astro Anda
+          publish_dir: ./docs # Mengarahkan ke folder output 'docs' untuk deploy
