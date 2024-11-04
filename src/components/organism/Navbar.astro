@@ -1,6 +1,7 @@
 ---
 import NavItem from '../molecules/NavItem.astro';
 import menuIcon from '../../icons/menu.svg';
+import { observer } from '../../utils/changeActiveNavLink.js';
 
 interface Link {
 	title: string;
@@ -14,7 +15,10 @@ interface Props {
 const { links } = Astro.props;
 ---
 
-<nav id="navbar" class="flex items-center justify-between fixed left-0 right-0 top-0">
+<nav
+	id="navbar"
+	class="flex items-center justify-between fixed left-0 right-0 top-0"
+>
 	<div class="navbar-brand text-white font-bold">LOGO</div>
 	<img
 		src={menuIcon.src}
@@ -25,8 +29,7 @@ const { links } = Astro.props;
 
 	<ul
 		class="nav-list left-0 right-0
-            flex-col absolute bg-[var(--secondary)] laptop:static
-           "
+            flex-col absolute bg-[var(--secondary)] laptop:static"
 	>
 		{links.map((link) => <NavItem {...link} />)}
 	</ul>
@@ -36,10 +39,10 @@ const { links } = Astro.props;
 	nav {
 		background-color: var(--secondary);
 		z-index: 50;
-		@apply 
-            px-[25px] py-[14px] text-[16px] w-full
+		@apply px-[25px] py-[14px] text-[16px] w-full
             mobile:py-[20px] mobile:text-[24px]
             tablet:px-[75px] 
+            laptop:px-[135px]
             laptop:pb-3 laptop:pt-1;
 
 		.nav-list {
@@ -53,12 +56,11 @@ const { links } = Astro.props;
 			overflow: hidden;
 			transition: all 0.3s ease;
 
-            @screen laptop {
-                margin: 0 0 0 auto;
-            }
+			@screen laptop {
+				margin: 0 0 0 auto;
+			}
 
-            @apply 
-                top-[54px] text-right
+			@apply top-[54px] text-right
                 mobile:top-[80px] mobile:py-4
                 tablet:top-[80px] tablet:px-[65px]
                 laptop:h-max laptop:flex-row laptop:opacity-100 laptop:py-1 laptop:w-max laptop:p-0 laptop:gap-[40px];
