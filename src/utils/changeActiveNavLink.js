@@ -1,7 +1,6 @@
 const callback = (entries) => {
 	const navListItems = document.querySelectorAll('.nav-list .nav-item');
 	entries.forEach((entry) => {
-		const link = document.querySelector(`.nav-list .nav-item a[href='#${entry.target.id}']`);
 		if (entry.isIntersecting) {
 			navListItems.forEach((navLink) => {
 				navLink.classList.remove('active');
