@@ -24,15 +24,15 @@ jobs:
       - name: Build project
         run: npm run build
       
-      # - name: Check if docs folder exists
-      #   run: ls -la ./
+      - name: Check if docs folder exists
+        run: ls -la ./docs
 
-      # - name: Create .nojekyll file
-      #   # Membuat file .nojekyll di folder build
-      #   run: echo > ./nojekyll
+      - name: Create .nojekyll file
+        # Membuat file .nojekyll di folder build
+        run: echo > ./docs/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # publish_dir: ./ # Mengarahkan ke folder output 'docs' untuk deploy
+          publish_dir: ./docs # Mengarahkan ke folder output 'docs' untuk deploy
