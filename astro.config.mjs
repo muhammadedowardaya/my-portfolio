@@ -8,4 +8,5 @@ export default defineConfig({
 	integrations: [tailwind()],
 	output: 'static',
 	outDir: 'docs',
+	base: '/my-portfolio',
 });
