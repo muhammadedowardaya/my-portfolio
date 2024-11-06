@@ -1,0 +1,142 @@
+---
+import myPhoto from '../../images/my-photo.png';
+---
+
+<header
+	class="pt-[80px] px-[20px] w-full h-max
+    mobile:h-[890px] tablet:h-[840px]
+    desktop:pt-[70px] desktop:h-[730px]"
+>
+	<div class="hero
+        py-[20px] mobile:py-[80px] tablet:px-[50px] tablet:pb-[150px]
+        desktop:p-[130px]">
+		<div
+			class="content flex flex-col gap-[32px]
+            desktop:grid desktop:grid-cols-[max-content_max-content_max-content]"
+		>
+			<h1
+				class="content__heading
+                flex-col text-[48px] leading-[48px]
+                mobile:text-[72px] mobile:leading-[72px]
+                tablet:text-[120px] tablet:leading-[100px]
+                desktop:text-right desktop:text-[86px] desktop:leading-[86px]
+                "
+			>
+				<span>MUHAMMAD</span>
+				<span>EDO</span>
+				<span>WARDAYA</span>
+			</h1>
+			<div
+				class="content__vertical-line
+                hidden
+                desktop:block"
+			>
+			</div>
+			<p
+				class="content__subheading w-full
+                text-[20px]
+                mobile:text-[24px]
+                desktop:text-[32px] desktop:w-[500px]"
+			>
+				Front-End Web Developer with a Passion for Minimalist & Responsive
+				Designs
+			</p>
+		</div>
+		<div class="action-button bottom-[-45px] mobile:bottom-[-64px] tablet:bottom-0
+            desktop:bottom-[40px]">
+			<img
+				src={myPhoto.src}
+				alt="my photo"
+				class="action-button__image w-[140px]
+                    mobile:w-[200px] mobile:bottom-[-48px]
+                    desktop:w-[223px] desktop:h-[268px] desktop:bottom-[-60px]"
+			/>
+			<a
+				href="#contact"
+				class="action-button__link text-[20px] w-[250px] h-[50px]
+                mobile:text-[24px] mobile:w-[340px] mobile:h-[70px]
+                desktop:text-[24px] desktop:w-[400px] desktop:h-[80px]"
+				>{`Let’s Collaborate`}</a
+			>
+		</div>
+	</div>
+</header>
+
+<style>
+	header {
+		background-color: var(--secondary);
+		/* padding-top: 25px; */
+		position: relative;
+		/* padding-left:25px;
+        padding-right:25px; */
+
+		.hero {
+			/* padding:80px 0px; */
+			.content {
+				/* display: flex; */
+				/* flex-direction: column; */
+				/* gap: 32px; */
+				color: #fff;
+				align-items: center;
+
+				.content__heading {
+					display: flex;
+					/* flex-direction:column; */
+					width: 100%;
+
+					span {
+						/* font-size: 48px;
+						line-height: 48px; */
+						font-family: 'Concert One', sans-serif;
+					}
+				}
+
+				.content__subheading {
+					/* font-size: 16px; */
+					/* width: 100%; */
+					font-family: 'IBM Plex Mono', monospace;
+				}
+
+				.content__vertical-line {
+					/* display:none; */
+					height: 200px;
+					width: 1px;
+					background-color: white;
+				}
+			}
+
+			.action-button {
+				/* width: max-content; */
+				position: relative;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				/* bottom: 0px; */
+				left: 50%;
+				transform: translateX(-50%);
+
+				.action-button__image {
+					position: relative;
+					/* bottom: -30px; */
+					/* width: 140px; */
+				}
+
+				.action-button__link {
+					z-index: 10;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-weight: bold;
+					/* font-size: 20px; */
+					border-radius: 50px;
+					text-decoration: none;
+					color: white;
+					background-color: #006166;
+					/* width: 250px; */
+					/* height: 50px; */
+				}
+			}
+		}
+	}
+</style>
+

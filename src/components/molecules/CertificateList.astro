@@ -1,0 +1,53 @@
+---
+import CertificateItem from './CertificateItem.astro';
+
+export interface Certificate {
+	obtained: number;
+	expiry?: number;
+	institution: string;
+	title: string;
+    href: string;
+}
+
+interface Props {
+	certificates: Certificate[];
+}
+
+const { certificates } = Astro.props;
+---
+
+<div class="certificate-list">
+	{
+		certificates.length > 0 ? (
+			certificates.map((certificate) => (
+				<CertificateItem
+					obtained={certificate.obtained}
+					expiry={certificate.expiry}
+					institution={certificate.institution}
+					title={certificate.title}
+                    href={certificate.href}
+				/>
+			))
+		) : (
+			<p>No certificates found</p>
+		)
+	}
+</div>
+
+<style>
+    .certificate-list {
+        columns: 1;
+    }
+
+    @media screen and (min-width: 360px) {
+
+    }
+    @media screen and (min-width: 768px) {
+
+    }
+    @media screen and (min-width: 1280px) {
+        .certificate-list {
+        columns: 2;
+    }
+    }
+</style> 

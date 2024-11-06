@@ -1,0 +1,47 @@
+---
+import SkillList, { type SkillItem } from '../molecules/SkillList.astro';
+
+interface Props {
+	skills: SkillItem[];
+}
+
+const { skills } = Astro.props;
+---
+
+<section
+	id="skills"
+	class="p-[65px_25px]
+        mobile:p-[80px_25px]
+        tablet:p-[80px]
+        desktop:p-[148px_130px]"
+>
+	<h2 class="text-[24px] mb-[20px]
+        mobile:text-[32px]">Skills</h2>
+	<p class="text-[16px] mb-[40px] font-light
+        mobile:text-[20px] tablet:text-[24px]">
+		Berikut adalah beberapa teknologi yang saya kuasai untuk membangun website.
+	</p>
+	<SkillList skills={skills} />
+</section>
+
+<style>
+	#skills {
+		color: var(--background);
+		/* color:var(--normal-text); */
+		/* padding: 65px 25px; */
+		background-color: var(--secondary);
+
+		h2 {
+			font-family: 'Concert One', sans-serif;
+			/* font-size: 24px; */
+			/* margin-bottom: 20px; */
+			text-align: center;
+		}
+
+		& > p {
+			text-align: center;
+			/* font-size:16px; */
+			/* margin-bottom:40px; */
+		}
+	}
+</style>

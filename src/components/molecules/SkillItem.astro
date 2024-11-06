@@ -1,0 +1,79 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	iconUrl: string;
+}
+
+const { title, description, iconUrl } = Astro.props;
+---
+
+<div class="skill-item">
+	<img src={iconUrl} alt="tech icon" class="skill-item__icon" />
+	<div>
+		<h3 class="skill-item__title">{title}</h3>
+		<p class="skill-item__description">{description}</p>
+	</div>
+</div>
+
+<style>
+	.skill-item {
+		padding: 10px;
+		border: 1px solid var(--normal-text);
+		width: 100%;
+		display: flex;
+		column-gap: 20px;
+
+		@screen mobile {
+			padding: 20px;
+		}
+
+		@screen desktop {
+			padding: 30px;
+			column-gap: 30px;
+		}
+
+		img {
+			width: 30px;
+			height: 30px;
+
+			@screen mobile {
+				width: 50px;
+				height: 50px;
+			}
+		}
+
+		div {
+			text-align: left;
+
+			.skill-item__title {
+				font-size: 20px;
+				font-family: 'BebasKai', sans-serif;
+				font-weight: 400;
+				margin-bottom: 20px;
+
+				@screen mobile {
+					font-size: 24px;
+				}
+
+				@screen desktop {
+					font-size: 32px;
+				}
+			}
+
+			.skill-item__description {
+				font-family: 'inter', sans-serif;
+				font-size: 14px;
+                color: var(--normal-text);
+
+				@screen mobile {
+					font-size: 18px;
+				}
+                
+                @screen tablet {
+                    font-size: 20px;
+                }
+			}
+		}
+	}
+</style>

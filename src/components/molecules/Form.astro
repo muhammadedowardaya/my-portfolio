@@ -1,0 +1,33 @@
+---
+interface Props {
+	action: string;
+}
+
+const { action } = Astro.props;
+---
+
+<form action={action} class="w-full desktop:w-[525px]">
+	<slot name="input" />
+    <slot name="textarea" />
+	<button type="submit" class="h-[40px] tablet:h-[50px] text-[16px] mobile:text-[20px] tablet:text-[24px]">Send Message</button>
+</form>
+
+<style>
+	form {
+		/* width: 525px; */
+        margin:0 auto;
+
+		button[type='submit'] {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* height: 50px; */
+			background-color: #006166;
+			color: #fff;
+			/* font-size: 24px; */
+			width: 100%;
+			border: none;
+			cursor: pointer;
+		}
+	}
+</style>
