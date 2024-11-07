@@ -21,6 +21,7 @@ const { name, label, ...textareaProps } = Astro.props;
 			margin-bottom: 10px;
 			display: block;
 			width: 100%;
+            font-weight:600;
 		}
 
 		.textarea {
@@ -31,6 +32,8 @@ const { name, label, ...textareaProps } = Astro.props;
             /* font-size:24px; */
             /* background-color:var(--normal-text); */
             background-color: #fff;
+            color:var(--main-text);
+            font-weight:200;
             border:none;
 
             &:focus-within {
