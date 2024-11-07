@@ -111,7 +111,7 @@ import Textarea from '../molecules/Textarea.astro';
 			const phoneNumber = '6283808165175'; // Ganti dengan nomor WhatsApp tujuan Anda
 
 			// Membuat teks pesan yang akan dikirim
-			const whatsappMessage = `Halo, saya ${name.value}.\nPesan: ${message.value}`;
+			const whatsappMessage = `Halo, saya ${name.value}.\n\n${message.value}`;
 
 			// Membuat URL WhatsApp
 			const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
