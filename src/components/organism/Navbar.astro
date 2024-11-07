@@ -38,38 +38,38 @@ const { links } = Astro.props;
 	nav {
 		background-color: var(--secondary);
 		z-index: 50;
-		@apply px-[25px] py-[14px] text-[16px] w-full
-            mobile:py-[20px] mobile:text-[24px]
+		@apply px-[25px] pt-[10px] pb-[14px] text-[16px] w-full
+            mobile:pt-[16px] mobile:pb-[20px] mobile:text-[24px]
             tablet:px-[75px] 
-            laptop:px-[135px]
-            laptop:pb-3 laptop:pt-1;
+            laptop:px-[135px] laptop:py-3;
 
 		.nav-list {
 			/* width: max-content; */
 			display: flex;
 			list-style: none;
-			padding: 0 15px;
 			margin: 0 auto;
 			opacity: 0;
 			height: 0;
 			overflow: hidden;
 			transition: all 0.3s ease;
+            row-gap: 20px;
 
 			@screen laptop {
 				margin: 0 0 0 auto;
 			}
 
-			@apply top-[54px] text-right
-                mobile:top-[80px] mobile:py-4
+			@apply top-[54px] pt-[30px] px-[25px]
+                mobile:top-[80px]
                 tablet:top-[80px] tablet:px-[65px]
-                laptop:h-max laptop:flex-row laptop:opacity-100 laptop:py-1 laptop:w-max laptop:p-0 laptop:gap-[40px];
+                laptop:h-max laptop:flex-row laptop:opacity-100 laptop:py-1 laptop:w-max laptop:px-0 laptop:gap-[40px];
 
 			&.active {
-				height: 225px;
+				height: 310px;
 				opacity: 1;
+                border-bottom:4px solid #9298a0;
 
 				@screen mobile {
-					height: 320px;
+					height: 380px;
 					opacity: 1;
 				}
 			}

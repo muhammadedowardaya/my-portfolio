@@ -8,7 +8,7 @@ import myPhoto from '../../images/my-photo.png';
     desktop:pt-[70px] desktop:h-[730px]"
 >
 	<div class="hero
-        py-[20px] mobile:py-[80px] tablet:px-[50px] tablet:pb-[150px]
+        py-[20px] mobile:pt-[80px] tablet:px-[50px] tablet:pb-[150px]
         desktop:p-[130px]">
 		<div
 			class="content flex flex-col gap-[32px]
@@ -47,7 +47,7 @@ import myPhoto from '../../images/my-photo.png';
 			<img
 				src={myPhoto.src}
 				alt="my photo"
-				class="action-button__image w-[140px]
+				class="action-button__image w-[140px] bottom-[-35px]
                     mobile:w-[200px] mobile:bottom-[-48px]
                     desktop:w-[223px] desktop:h-[268px] desktop:bottom-[-60px]"
 			/>
@@ -131,7 +131,7 @@ import myPhoto from '../../images/my-photo.png';
 					border-radius: 50px;
 					text-decoration: none;
 					color: white;
-					background-color: #006166;
+					background-color: var(--button-color);
 					/* width: 250px; */
 					/* height: 50px; */
 				}

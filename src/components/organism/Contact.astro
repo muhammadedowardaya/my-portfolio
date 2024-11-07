@@ -5,20 +5,27 @@ import SocialMediaItem from '../molecules/SocialMediaItem.astro';
 import Textarea from '../molecules/Textarea.astro';
 ---
 
-<section id="contact" class="p-[65px_25px] tablet:p-[80px] desktop:p-[148px_130px]">
+<section
+	id="contact"
+	class="p-[65px_25px] tablet:p-[80px] desktop:p-[148px_130px]"
+>
 	<h2 class="text-[24px] mobile:text-[32px] mb-[20px]">CONTACT</h2>
-	<p class="font-light mx-auto desktop:mb-[50] w-full desktop:w-[700px] text-[16px] mobile:text-[20px] tablet:text-[24px] mb-[30px]">
+	<p
+		class="font-light mx-auto desktop:mb-[50] w-full desktop:w-[700px] text-[16px] mobile:text-[20px] tablet:text-[24px] mb-[30px]"
+	>
 		Tertarik untuk bekerjasama?<br />
 		Hubungi saya lewat form di bawah ini, pesan akan dikirimkan langsung ke aplikasi
 		whatsapp.
 	</p>
-	<Form action="/">
-		<Input type="text" name="name" label="Name" slot="input" />
-		<Textarea name="message" label="Message" slot="textarea" />
+	<Form action="/" id="whatsappForm">
+		<Input type="text" name="name" label="Name" slot="input" id="name"/>
+		<Textarea name="message" label="Message" slot="textarea" id="message"/>
 	</Form>
 	<div class="contact__divider my-[50px] mx-auto w-full desktop:w-[525px]">
 		<div class="left-line"></div>
-		<div class="font-light contact__divider-content mx-4 text-[16px] mobile:text-[20px] tablet:text-[24px] w-[200px] tablet:w-[300px] desktop:w-[350px]">
+		<div
+			class="font-light contact__divider-content mx-4 text-[16px] mobile:text-[20px] tablet:text-[24px] w-[200px] tablet:w-[300px] desktop:w-[350px]"
+		>
 			<p>Atau</p>
 			<p>Kunjungi media sosial saya</p>
 		</div>
@@ -57,10 +64,10 @@ import Textarea from '../molecules/Textarea.astro';
 		}
 
 		& > p {
-            /* font-size:24px; */
+			/* font-size:24px; */
 			text-align: center;
-            /* width:700px; */
-            /* margin:0 auto 50px auto; */
+			/* width:700px; */
+			/* margin:0 auto 50px auto; */
 		}
 
 		.contact__divider {
@@ -84,9 +91,33 @@ import Textarea from '../molecules/Textarea.astro';
 			}
 		}
 
-        .social-media-list {
-            margin:0 auto;
-            /* width:525px; */
-        }
+		.social-media-list {
+			margin: 0 auto;
+			/* width:525px; */
+		}
 	}
 </style>
+
+<script>
+	document.getElementById('whatsappForm')
+		?.addEventListener('submit', function (event) {
+			event.preventDefault(); // Mencegah pengiriman form secara default
+
+			// Ambil data dari form
+			const name = document.getElementById('name') as HTMLInputElement;
+			const message = document.getElementById('message') as HTMLInputElement;
+
+			// Nomor WhatsApp tujuan (format internasional tanpa tanda "+" atau "0" di depan)
+			const phoneNumber = '6283808165175'; // Ganti dengan nomor WhatsApp tujuan Anda
+
+			// Membuat teks pesan yang akan dikirim
+			const whatsappMessage = `Halo, saya ${name.value}.\nPesan: ${message.value}`;
+
+			// Membuat URL WhatsApp
+			const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+			// Buka WhatsApp dengan pesan
+			window.open(whatsappURL, '_blank');
+
+		});
+</script>

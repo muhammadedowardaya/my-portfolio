@@ -16,42 +16,69 @@ const { title, href } = Astro.props;
 <style>
 	.nav-item {
 		list-style: none;
-        /* margin:0 30px; */
+
+		/* padding: 5px 10px; */
+		/* margin:0 30px; */
+		/* box-shadow: 1px 1px 0px  #6e7783; */
+		border: 1px solid #9298a0;
+		text-align: center;
+		@screen laptop {
+			border: none;
+		}
 
 		a {
+			background-color: #393e46;
 			text-decoration: none;
-			color: #868a8f;
-            /* padding:0 30px; */
+			/* color: #04eaf6; */
+			color: #9298a0;
+			padding: 3px 4px 4px 4px;
+			font-weight: 600;
+
+			@screen laptop {
+				color: #9298a0;
+			}
 		}
 
 		&:hover {
 			a {
-				color: #fff;
+				background-color: #fff;
+				color: #393e46;
+
+				@screen laptop {
+					color: #fff;
+					background: none;
+				}
 			}
 		}
 
-        &.active {
-            a {
-                color: #fff;
-            }
-        }
+		&.active {
+			a {
+				background-color: #fff;
+				color: #393e46;
+
+				@screen laptop {
+					color: #fff;
+					background: none;
+				}
+			}
+		}
 	}
 </style>
 
 <script>
-    const updateActiveLink = () => {
-        const currentHash = window.location.hash;
-        const navItems = document.querySelectorAll('.nav-item');
+	const updateActiveLink = () => {
+		const currentHash = window.location.hash;
+		const navItems = document.querySelectorAll('.nav-item');
 
-        navItems.forEach((navItem) => {
-            navItem.classList.remove('active');
-            if (navItem.querySelector(`a[href="${currentHash}"]`)) {
-                navItem.classList.add('active');
-            }
-        });
-    }
+		navItems.forEach((navItem) => {
+			navItem.classList.remove('active');
+			if (navItem.querySelector(`a[href="${currentHash}"]`)) {
+				navItem.classList.add('active');
+			}
+		});
+	};
 
-    updateActiveLink();
+	updateActiveLink();
 
-    window.addEventListener('hashchange', updateActiveLink);
+	window.addEventListener('hashchange', updateActiveLink);
 </script>
